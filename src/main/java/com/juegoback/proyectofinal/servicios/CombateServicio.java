@@ -2,7 +2,6 @@ package com.juegoback.proyectofinal.servicios;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Stack;
 
 import com.juegoback.proyectofinal.modelos.Carta;
@@ -20,10 +19,9 @@ public class CombateServicio {
         cartas.add(crearCarta("Ataque Fuerte", Enumhablidad.Ataque_fuerte, 3, "Daño alto"));
         cartas.add(crearCarta("Defensa", Enumhablidad.Defensa, 1, "Reduce daño"));
         cartas.add(crearCarta("Curación", Enumhablidad.Soporte, 2, "Recupera vida"));
-
     }
 
-    public Jugador crearJugdor(String id){
+    public Jugador crearJugdor(String id){ 
         Jugador jugador = new Jugador();
         jugador.setId(id);
         jugador.setEnergia(3);
