@@ -5,12 +5,14 @@ public class Carta {
     private Enumhablidad tipo;
     private int energia;
     private String efecto;
+    private int daño;
 
-    public Carta(String nombre, Enumhablidad tipo, int energia, String efecto) {
+    public Carta(String nombre, Enumhablidad tipo, int energia, String efecto, int daño) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.energia = energia;
         this.efecto = efecto;
+        this.daño = daño;
     }
 
     public String getNombre() {
@@ -27,6 +29,9 @@ public class Carta {
 
     public String getEfecto() {
         return efecto;
+    }
+    public int getDano(){
+        return daño;
     }
 
 }

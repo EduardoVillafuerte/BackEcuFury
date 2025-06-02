@@ -12,13 +12,14 @@ public class CombateServicio {
     
     Jugador jugador = new Jugador(); 
     ArrayList<Carta> cartas = new ArrayList<>();
-    private static final int NUMERO_MAXIMO_CARTAS = 4;
+    private static final int NUMERO_MAXIMO_CARTAS = 5;
 
     public CombateServicio(){
-        cartas.add(crearCarta("Ataque Normal", Enumhablidad.Ataque_normal, 1, "Daño normal"));
-        cartas.add(crearCarta("Ataque Fuerte", Enumhablidad.Ataque_fuerte, 3, "Daño alto"));
-        cartas.add(crearCarta("Defensa", Enumhablidad.Defensa, 1, "Reduce daño"));
-        cartas.add(crearCarta("Curación", Enumhablidad.Soporte, 2, "Recupera vida"));
+        cartas.add(crearCarta("Ataque Normal", Enumhablidad.Ataque_normal, 1, "Daño normal",100));
+        cartas.add(crearCarta("Ataque Fuerte", Enumhablidad.Ataque_fuerte, 3, "Daño alto",50));
+        cartas.add(crearCarta("Defensa", Enumhablidad.Defensa, 1, "Reduce daño",0));
+        cartas.add(crearCarta("Curación", Enumhablidad.Soporte, 2, "Recupera vida",0));
+        cartas.add(crearCarta("Curación", Enumhablidad.Soporte, 2, "Recupera vida",0));
     }
 
     public Jugador crearJugdor(String id){ 
@@ -40,12 +41,12 @@ public class CombateServicio {
                 return pila;
         }
         return null;
-
+ 
     }
 
     
-    private Carta crearCarta(String nombre, Enumhablidad tipo, int energia, String efecto) {
-        Carta carta = new Carta(nombre,tipo,energia,efecto);
+    private Carta crearCarta(String nombre, Enumhablidad tipo, int energia, String efecto, int dano) {
+        Carta carta = new Carta(nombre,tipo,energia,efecto,dano);
         return carta;
     }
 
