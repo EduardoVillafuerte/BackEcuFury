@@ -6,3 +6,4 @@ public enum Enumhablidad {
     Ataque_normal,
     Ataque_fuerte;
 }
+
