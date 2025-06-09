@@ -35,8 +35,11 @@ public class CombateServicio {
     public Jugador crearJugdor(String id){ 
         Jugador jugador = new Jugador();
         jugador.setId(id);
-        jugador.setEnergia(3);
+        jugador.setEnergia(4);
         jugador.setSalud(100);
+        jugador.setEscudo(5);
+        jugador.setFuerza(1);
+        jugador.setAgilidad(1);
         return jugador;
     }
 

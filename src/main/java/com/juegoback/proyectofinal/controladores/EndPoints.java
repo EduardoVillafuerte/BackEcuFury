@@ -8,6 +8,7 @@ import com.juegoback.proyectofinal.modelos.Jugador;
 import com.juegoback.proyectofinal.servicios.CombateServicio;
 import com.juegoback.proyectofinal.servicios.MusicaServicio;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,12 +27,11 @@ public class EndPoints {
     MusicaServicio musicaServicio = new MusicaServicio();
 
     private Jugador jugador;    
-    @PostMapping("/jugador/{id}")
-    public List<Jugador> crearJugador(@PathVariable String id){
-        ArrayList<Jugador> lista = new ArrayList<>();
+    @GetMapping("/jugador/{id}")
+    public ResponseEntity<Jugador> crearJugador(@PathVariable String id){
         jugador = combateServicio.crearJugdor(id);
-        lista.add(new Jugador(jugador.getId(),jugador.getSalud(),jugador.getEnergia()));
-        return lista;
+        //implemetar la base de datos para puntuacion y escalon
+        return ResponseEntity.ok(new Jugador(jugador.getId(),jugador.getEnergia(),jugador.getSalud(),jugador.getEscudo(),jugador.getFuerza(),jugador.getAgilidad()));
     }
 
     @GetMapping("/obtenermazo")
